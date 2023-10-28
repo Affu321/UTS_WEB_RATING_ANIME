@@ -79,11 +79,13 @@ p {
     text-align: center;
 }
 
+/* Gaya teks untuk pesan Recommended */
 .recommended {
     color: green;
     font-weight: bold;
 }
 
+/* Gaya teks untuk pesan Not Recommended */
 .not-recommended {
     color: red;
     font-weight: bold;

@@ -114,14 +114,6 @@ $movies = array(
 );
 
 // Menentukan apakah harus menampilkan pesan "Recommended" dan warna hijau
-if (count($movies) > 5) {
-    $message = "Recommended";
-    $messageColor = "green";
-} else {
-    $message = "Not Recommended";
-    $messageColor = "red";
-}
-
 for ($i = 0; $i < count($movies); $i++) {
     $movie = $movies[$i];
     $title = $movie["title"];
@@ -132,7 +124,12 @@ for ($i = 0; $i < count($movies); $i++) {
     echo "<h2>$title</h2>";
     echo "<img src='$image' alt='$title'>";
     echo "<p>Rating: $rating</p>";
-    echo "<p style='color: $messageColor;'>$message</p>";
+
+    if ($rating < 4.0) {
+        echo "<p class='not-recommended'>Not Recommended</p>";
+    } else {
+        echo "<p class='recommended'>Recommended</p>";
+    }
 
     echo "</div>";
 }
